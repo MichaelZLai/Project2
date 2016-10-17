@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workout_time: MyString
+  reps_complete: 1
+  rounds_complete: MyString
+  time_complete: MyString
+
+two:
+  workout_time: MyString
+  reps_complete: 1
+  rounds_complete: MyString
+  time_complete: MyString

@@ -1,2 +1,18 @@
-<h1>Workouts#edit</h1>
-<p>Find me in app/views/workouts/edit.html.erb</p>
+<h2>Edit Workout</h2>
+
+<%= form_for @workout do |f| %>
+
+<p><%= f.label :workout_date %>
+<%= f.date_field :workout_date, value: f.object.workout_date %></p>
+
+<p><%= f.label :workout_name %>
+<%= f.text_field :name %></p>
+
+<p><%= f.label :workout %>
+<%= f.text_area :wod %></p>
+
+<%= f.submit "Edit WOD!" %>
+
+<% end %>
+
+<%= link_to "Back", workouts_path %>

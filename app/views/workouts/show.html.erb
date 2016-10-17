@@ -1,2 +1,13 @@
-<h1>Workouts#show</h1>
-<p>Find me in app/views/workouts/show.html.erb</p>
+<h2>Workouts</h2>
+
+
+<p><%= @workout.name %> <%= @workout.workout_date %></p>
+<p><%= @workout.wod %></p>
+
+
+
+<%= link_to "Back", workouts_path %>
+<%= link_to "Add Score", new_score_path %>
+<%= link_to "Edit Score", edit_score_path(@score) %>
+<%= link_to "Edit Workout", edit_workout_path(@workout) %>
+<%= link_to "Delete Workout", workout_path(@workout), method: :delete, class: "delete" %>

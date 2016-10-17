@@ -26,7 +26,6 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
-    @scores = @workout.scores
   end
 
   def destroy

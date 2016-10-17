@@ -1,8 +1,4 @@
 class ScoresController < ApplicationController
-  def index
-  end
-  def show
-  end
 
   def new
     @workout = Workout.find(params[:workout_id])
@@ -39,7 +35,7 @@ class ScoresController < ApplicationController
 
   private
   def score_params
-    params.require(:score).permit(:workout_time)
+    params.require(:score).permit(:class_time,:score)
   end
 
 end

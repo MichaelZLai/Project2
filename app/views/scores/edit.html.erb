@@ -5,14 +5,11 @@
 <p><%= f.label :class_time %>
 <%= f.text_field :workout_time %></p>
 
-<p><%= f.label :reps_complete %>
-<%= f.text_field :reps_complete %></p>
+<p><%= f.label :score %>
+<%= f.text_field :workout_score %></p>
 
-<p><%= f.label :rounds_complete %>
-<%= f.text_field :rounds_complete %></p>
-
-<p><%= f.label :time_complete %>
-<%= f.text_field :time_complete %></p>
+<p><%= f.label :notes %>
+<%= f.text_area :notes %></p>
 
 <%= f.submit "Submit Your Score!" %>
 <% end %>

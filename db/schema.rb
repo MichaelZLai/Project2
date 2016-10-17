@@ -10,19 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017182522) do
+ActiveRecord::Schema.define(version: 20161017223650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "scores", force: :cascade do |t|
     t.string   "workout_time"
-    t.integer  "reps_complete"
-    t.string   "rounds_complete"
-    t.string   "time_complete"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "workout_score"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "workout_id"
+    t.text     "notes"
     t.index ["workout_id"], name: "index_scores_on_workout_id", using: :btree
   end
 

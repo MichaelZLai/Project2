@@ -3,6 +3,23 @@
 
 <p><%= simple_format h @workout.wod %></p>
 
+<table>
+    <tr>
+      <th>Class Time</th>
+      <th>Score</th>
+      <th>Notes</th>
+    </tr>
+  <% @workout.scores.each do |score| %>
+    <tr>
+      <td><%= score.workout_time %></td>
+      <td><%= score.workout_score %></td>
+      <td><%= score.notes %></td>
+    </tr>
+  <% end %>
+
+
+
+</table>
 
 
 <%= link_to "Back", workouts_path %> |

@@ -4,7 +4,7 @@
   <a href="<%= workout_path(workout) %>">
     <p><%= workout.name %> <%= workout.workout_date %></p>
   </a>
-    <p><%= workout.wod %></p>
+    <p><%= simple_format h workout.wod %></p>
   <% end  %>
 
 <%= link_to "Add Workout", new_workout_path %>

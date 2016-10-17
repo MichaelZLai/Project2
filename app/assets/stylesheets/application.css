@@ -2,3 +2,30 @@
   margin:0;
   text-align: center;
 }
+html{
+  font-family: "Varela Round", sans-serif;
+}
+a{
+  text-decoration:none;
+}
+nav{
+  font-family: "Shadows Into Light", "Varela Round";
+  font-size: 50px;
+  background: #333844;
+  color: #B4CD35;
+  text-align: left;
+}
+nav a{
+  /*text-align: left;*/
+  margin-left: 10px;
+}
+nav a:link, nav a:visited{
+  color: #B4CD35;
+}
+nav span{
+  color: #fff;
+}
+nav span:hover{
+  color: #B4CD35;
+  transition: .5s;
+}

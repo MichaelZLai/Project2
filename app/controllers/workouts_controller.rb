@@ -9,7 +9,6 @@ class WorkoutsController < ApplicationController
 
   def create
     @workout = Workout.create!(workout_params)
-    puts(params)
 
     redirect_to workouts_path
   end
@@ -27,7 +26,7 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
-    @score = Score.all
+    @scores = @workout.scores
   end
 
   def destroy

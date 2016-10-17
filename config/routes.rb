@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :workouts, :scores
+  resources :workouts do
+    resources :scores
+  end
+  
 end

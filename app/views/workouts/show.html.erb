@@ -1,13 +1,11 @@
-<h2>Workouts</h2>
+<h2>Workout of the Day</h2>
+<h3><%= @workout.name %> <%= @workout.workout_date %></h3>
+
+<p><%= simple_format h @workout.wod %></p>
 
 
-<p><%= @workout.name %> <%= @workout.workout_date %></p>
-<p><%= @workout.wod %></p>
 
-
-
-<%= link_to "Back", workouts_path %>
-<%= link_to "Add Score", new_score_path %>
-<%= link_to "Edit Score", edit_score_path(@score) %>
-<%= link_to "Edit Workout", edit_workout_path(@workout) %>
+<%= link_to "Back", workouts_path %> |
+<%= link_to "Add Score", new_workout_score_path(@workout) %> |
+<%= link_to "Edit Workout", edit_workout_path(@workout) %> |
 <%= link_to "Delete Workout", workout_path(@workout), method: :delete, class: "delete" %>

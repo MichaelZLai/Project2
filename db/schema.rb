@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017145526) do
+ActiveRecord::Schema.define(version: 20161017182522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20161017145526) do
     t.string   "time_complete"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "workout_id"
+    t.index ["workout_id"], name: "index_scores_on_workout_id", using: :btree
   end
 
   create_table "workouts", force: :cascade do |t|
@@ -29,10 +31,8 @@ ActiveRecord::Schema.define(version: 20161017145526) do
     t.text     "wod"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "score_id"
     t.string   "workout_date"
-    t.index ["score_id"], name: "index_workouts_on_score_id", using: :btree
   end
 
-  add_foreign_key "workouts", "scores"
+  add_foreign_key "scores", "workouts"
 end

@@ -3,7 +3,7 @@
 <%= form_for @workout do |f| %>
 
 <p><%= f.label :workout_date %>
-<%= f.date_field :workout_date, :value => Time.now.strftime('%Y-%m-%d') %></p>
+<%= f.date_field :workout_date, value: f.object.workout_date %></p>
 
 <p><%= f.label :workout_name %>
 <%= f.text_field :name %></p>
@@ -11,7 +11,7 @@
 <p><%= f.label :workout %>
 <%= f.text_area :wod %></p>
 
-<%= f.submit "Create New WOD!" %>
+<%= f.submit "Create WOD!" %>
 
 <% end %>
 

@@ -35,7 +35,7 @@ class ScoresController < ApplicationController
 
   private
   def score_params
-    params.require(:score).permit(:class_time,:score)
+    params.require(:score).permit(:workout_time,:workout_score,:notes)
   end
 
 end

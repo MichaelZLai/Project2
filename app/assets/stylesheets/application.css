@@ -5,8 +5,9 @@
 html{
   font-family: "Varela Round", sans-serif;
 }
-a{
+a, a:link, a:visited{
   text-decoration:none;
+  color: #0B5FA7;
 }
 nav{
   font-family: "Shadows Into Light", "Varela Round";
@@ -15,17 +16,40 @@ nav{
   color: #B4CD35;
   text-align: left;
 }
-nav a{
-  /*text-align: left;*/
-  margin-left: 10px;
+  nav a{
+    /*text-align: left;*/
+    margin-left: 10px;
+  }
+  nav a:link, nav a:visited{
+    color: #B4CD35;
+  }
+  nav span{
+    color: #fff;
+  }
+  nav span:hover{
+    color: #B4CD35;
+    transition: .5s;
+  }
+
+table {
+    display:flex;
+    justify-content: center;
+    margin: auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
 }
-nav a:link, nav a:visited{
-  color: #B4CD35;
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
-nav span{
-  color: #fff;
+td a:link, td a:visited{
+  color:#B4CD35;
 }
-nav span:hover{
-  color: #B4CD35;
-  transition: .5s;
+td a:hover{
+  text-decoration: underline;
+}
+tr:nth-child(even) {
+    background-color: #F7F7F7;
 }

@@ -12,13 +12,10 @@
   <% @workout.scores.each do |score| %>
     <tr>
       <td><%= score.workout_time %></td>
-      <td><%= score.workout_score %></td>
+      <td><a href="<%= edit_workout_score_path(@workout,score.id) %>"><%= score.workout_score %></a></td>
       <td><%= score.notes %></td>
     </tr>
   <% end %>
-
-
-
 </table>
 
 

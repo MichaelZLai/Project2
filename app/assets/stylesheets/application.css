@@ -2,12 +2,19 @@
   margin:0;
   text-align: center;
 }
-html{
+html,body{
+  height:100%;
   font-family: "Varela Round", sans-serif;
 }
 a, a:link, a:visited{
   text-decoration:none;
   color: #0B5FA7;
+}
+h3{
+  margin-top: 10px;
+}
+h2{
+  margin-bottom: 5px;
 }
 /*TOP NAV BAR*/
 nav{
@@ -33,18 +40,29 @@ nav{
   }
 /*HEAD BAR*/
 .headbar{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 200px;
   width:100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.alphacoders.com/698/thumb-1920-698555.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.alphacoders.com/698/thumb-1920-698555.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
 }
-.headbar h2, .headbar p{
-  display:flex;
-  justify-content: center;
-  /*margin: 50px;*/
+/*FOOTER*/
+.wrapper{
+  min-height: 100%;
+  margin-bottom: 50px;
+}
+footer,.push{
+  height:50px;
+}
+footer{
+  border-top: 2px solid #DBDBDB;
+  padding-top: 10px;
 }
 
 /*LEADERBOARD TABLE*/

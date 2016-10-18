@@ -4,7 +4,7 @@
 </div>
 
 <% @workouts.each do |workout| %>
-  <a href="<%= workout_path(workout) %>">
+  <h3><a href="<%= workout_path(workout) %>"></h3>
     <p><%= workout.name %> <%= workout.workout_date %></p>
   </a>
     <p><%= simple_format h workout.wod %></p>

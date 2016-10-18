@@ -20,9 +20,9 @@ class ScoresController < ApplicationController
   def update
     @workout = Workout.find(params[:workout_id])
     @score = Score.find(params[:id])
-    @score.update(workout_params)
+    @score.update(score_params)
 
-    redirect_to workout_scores_path(@workout)
+    redirect_to workout_path(@workout)
   end
 
   def destroy

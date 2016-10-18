@@ -9,6 +9,7 @@ a, a:link, a:visited{
   text-decoration:none;
   color: #0B5FA7;
 }
+/*TOP NAV BAR*/
 nav{
   font-family: "Shadows Into Light", "Varela Round";
   font-size: 50px;
@@ -30,7 +31,23 @@ nav{
     color: #B4CD35;
     transition: .5s;
   }
+/*HEAD BAR*/
+.headbar{
+  height: 200px;
+  width:100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.alphacoders.com/698/thumb-1920-698555.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+.headbar h2, .headbar p{
+  display:flex;
+  justify-content: center;
+  /*margin: 50px;*/
+}
 
+/*LEADERBOARD TABLE*/
 table {
     display:flex;
     justify-content: center;

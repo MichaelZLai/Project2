@@ -8,19 +8,33 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
     <div class="wrapper">
     <nav>
       <a href="<%= workouts_path %>">WOD<span>leader</span></a>
+      <span class="login">
+        <span class="notice"><%= notice %></span>
+        <span class="alert"><%= alert %></span>
+          <% if !current_user %>
+            <%= link_to "Sign up", new_user_registration_path %>
+            <%= link_to "Sign in", new_user_session_path %>
+          <% else %>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+            <%= current_user.email %>
+          <% end %>
+      </span>
     </nav>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+
       <%= yield %>
+
     <div class="push"></div>
     </div>
+
     <footer>
       <div>2016 Michael Lai | Powered by <img class="emoji" draggable="false" alt="☕" src="http://twemoji.maxcdn.com/16x16/2615.png"></div>
     </footer>
+
   </body>
 
 </html>

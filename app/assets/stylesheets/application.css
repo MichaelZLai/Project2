@@ -22,7 +22,8 @@ nav{
   font-size: 50px;
   background: #333844;
   color: #B4CD35;
-  text-align: left;
+  display: flex;
+  justify-content: space-between;;
 }
   nav a{
     /*text-align: left;*/
@@ -38,6 +39,16 @@ nav{
     color: #B4CD35;
     transition: .5s;
   }
+
+/*LOGIN*/
+.login{
+  margin-right: 10px;
+  display: flex;
+  text-align:right;
+  align-items: center;
+  font-family: "Varela Round", sans-serif;
+  font-size: 14px;
+}
 /*HEAD BAR*/
 .headbar{
   display:flex;

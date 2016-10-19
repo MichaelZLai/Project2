@@ -1,4 +1,5 @@
 class ScoresController < ApplicationController
+before_action :authenticate_user!
 
   def new
     @workout = Workout.find(params[:workout_id])
@@ -7,7 +8,7 @@ class ScoresController < ApplicationController
 
   def create
     @workout = Workout.find(params[:workout_id])
-    @score = @workout.scores.create!(score_params)
+    @score = @workout.scores.create!(score_params.merge(user: current_user))
 
     redirect_to workout_path(@workout)
   end
@@ -28,7 +29,11 @@ class ScoresController < ApplicationController
   def destroy
     @workout = Workout.find(params[:workout_id])
     @score = @workout.scores.find(params[:id])
-    @score.destroy
+      if @score.user == current_user
+        @score.destroy
+      else
+        flash[:alert] = "Only the author of the post can delete"
+      end
 
     redirect_to workout_scores_path(@workout)
   end

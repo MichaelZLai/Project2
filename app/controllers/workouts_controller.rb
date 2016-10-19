@@ -1,4 +1,6 @@
 class WorkoutsController < ApplicationController
+before_action :authenticate_user!
+
   def index
     @workouts = Workout.all
   end
@@ -15,6 +17,7 @@ class WorkoutsController < ApplicationController
 
   def edit
     @workout = Workout.find(params[:id])
+    authorize! :update, @workout
   end
 
   def update
@@ -26,6 +29,8 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
+
+
   end
 
   def destroy

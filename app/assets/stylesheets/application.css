@@ -102,3 +102,20 @@ td a:hover{
 tr:nth-child(even) {
     background-color: #F7F7F7;
 }
+
+/*ATHLETES PAGES*/
+.athlete_prof{
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.athlete_prof img{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+.athlete_attr{
+  display: flex;
+  flex-direction: column;
+}

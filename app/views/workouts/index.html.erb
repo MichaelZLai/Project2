@@ -9,5 +9,6 @@
   </a>
     <p><%= simple_format h workout.wod %></p>
   <% end  %>
-
-<%= link_to "Add Workout", new_workout_path %>
+<% if can? :create, @workout %>
+  <%= link_to "Add Workout", new_workout_path %>
+<% end %>

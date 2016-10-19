@@ -9,6 +9,7 @@ before_action :authenticate_user!
   def create
     @workout = Workout.find(params[:workout_id])
     @score = @workout.scores.create!(score_params.merge(user: current_user))
+    @workout_time = []
 
     redirect_to workout_path(@workout)
   end
@@ -16,12 +17,14 @@ before_action :authenticate_user!
   def edit
     @workout = Workout.find(params[:workout_id])
     @score = Score.find(params[:id])
+    authorize! :update, @score
   end
 
   def update
     @workout = Workout.find(params[:workout_id])
     @score = Score.find(params[:id])
     @score.update(score_params)
+    authorize! :update, @score
 
     redirect_to workout_path(@workout)
   end

@@ -7,6 +7,7 @@ before_action :authenticate_user!
 
   def new
     @workout = Workout.new
+    authorize! :create, @workout
   end
 
   def create

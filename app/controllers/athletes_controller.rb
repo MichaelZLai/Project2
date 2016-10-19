@@ -1,0 +1,43 @@
+class AthletesController < ApplicationController
+  def index
+    @athletes = Athlete.all
+  end
+
+  def show
+    @athlete = Athlete.find(params[:id])
+  end
+
+  def new
+    @athlete = Athlete.new
+  end
+
+  def create
+    @athlete = Athlete.create!(athlete_params)
+
+    redirect_to workouts_path
+  end
+
+  def edit
+    @athlete = Athlete.find(params[:id])
+  end
+
+  def update
+    @athlete = Athlete.find(params[:id])
+    @athlete.update(athlete_params)
+
+    redirect_to athlete_path(@athlete)
+  end
+
+  def destroy
+    @athlete = Athlete.find(params[:id])
+    @athlete.destroy
+
+    redirect_to workouts_path
+  end
+
+  private
+  def athlete_params
+    params.require(:athlete).permit(:age, :height, :weight, :img_url, :gender)
+  end
+
+end

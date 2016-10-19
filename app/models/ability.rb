@@ -5,15 +5,14 @@ class Ability
 
     user || User.new
 
-      if user.is? :admin
-        can :manage, :all
-      else
-        can :read, :all
-        can :update, Score do |score|
-          user.id == score.user_id
-          end
-        can :create, Score
+    if user
+      can :create, [Score, Athlete]
+      can [:update, :destroy], [Score,Athlete], :user => user
+        if user.admin
+          can :manage, :all
+        end
       end
+
   end
 
 end

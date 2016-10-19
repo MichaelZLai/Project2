@@ -1,0 +1,28 @@
+<h3>Edit Athlete</h3>
+
+<%= form_for @athlete do |f| %>
+
+<p><%= f.label :gender %>
+<%= f.text_field :gender %></p>
+
+<p><%= f.label :age %>
+<%= f.text_field :age %></p>
+
+<p><%= f.label :height %>
+<%= f.text_area :height %></p>
+
+<p><%= f.label :weight %>
+<%= f.text_field :weight %></p>
+
+
+
+<%= f.submit "Edit Athlete!" %>
+
+<% end %>
+
+
+<%= link_to "Back", workouts_path %>
+<% if can? :update, @athlete %>
+  | <%= link_to "Edit Athlete", edit_athlete_path(@athlete) %>
+  | <%= link_to "Delete Athlete", athlete_path(@athlete), method: :delete, class: "delete" %>
+<% end %>

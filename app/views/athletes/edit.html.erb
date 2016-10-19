@@ -1,28 +1,50 @@
+<div class="headbar">
+  <h2>Whats good, <%= current_user.name.partition(" ").first %></h2>
+  <p>#Yolo</p>
+</div>
+
 <h3>Edit Athlete</h3>
 
+<div id="form">
 <%= form_for @athlete do |f| %>
 
-<p><%= f.label :gender %>
-<%= f.text_field :gender %></p>
+<p><%= f.label :name %></p>
+<%= f.fields_for :user, @athlete.user do |c| %>
+<p><%= c.text_field :name %></p>
+<% if @athlete.user.admin == true %>
+<p><%= f.label :coach %>
+  <%= c.label :admin, "Yup", value: true %>
+  <%= c.radio_button :admin, true, :checked => true %>
+  <%= c.label :admin, "Nope", value: false %>
+  <%= c.radio_button :admin, false %></p>
+  <%= c.hidden_field :email %>
+  <%= c.hidden_field :id %>
+  <% else %>
+  <%= c.hidden_field :admin %>
+  <%= c.hidden_field :email %>
+  <%= c.hidden_field :id %>
+  <% end %></p>
 
-<p><%= f.label :age %>
-<%= f.text_field :age %></p>
+<p><%= f.label :gender %></p>
+<p><%= f.text_field :gender %></p>
 
-<p><%= f.label :height %>
-<%= f.text_area :height %></p>
+<p><%= f.label :age %></p>
+<p><%= f.text_field :age %></p>
 
-<p><%= f.label :weight %>
-<%= f.text_field :weight %></p>
+<p><%= f.label :height %></p>
+<p><%= f.text_field :height %></p>
 
+<p><%= f.label :weight %></p>
+<p><%= f.text_field :weight %></p>
 
+<% end %></p>
 
 <%= f.submit "Edit Athlete!" %>
 
 <% end %>
-
+</div>
 
 <%= link_to "Back", workouts_path %>
 <% if can? :update, @athlete %>
-  | <%= link_to "Edit Athlete", edit_athlete_path(@athlete) %>
   | <%= link_to "Delete Athlete", athlete_path(@athlete), method: :delete, class: "delete" %>
 <% end %>

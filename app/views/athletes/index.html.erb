@@ -1,8 +1,17 @@
 <div class="headbar">
-<h2>Welcome Back</h2>
-<p>I've missed you.</p>
+  <h2>Whats good, <%= current_user.name.partition(" ").first %></h2>
+  <p>#Yolo</p>
 </div>
 
+<h3>Athletes</h3>
+<div id="athletes">
+<% @athletes.each do |athlete| %>
 
+  <div class="athlete_circle" style="background-image:url('<%=athlete.img_url%>')">
+      <a href="<%= athlete_path(athlete) %>"><%= athlete.user.name %></p></a>
+  </div>
+
+  <% end %>
+</div>
 
 <%= link_to "Back", workouts_path %>

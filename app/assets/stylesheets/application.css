@@ -80,6 +80,9 @@ footer{
 }
 
 /*LEADERBOARD TABLE*/
+#form p{
+  margin-top: 10px;
+}
 table {
     display:flex;
     justify-content: center;
@@ -102,17 +105,49 @@ td a:hover{
 tr:nth-child(even) {
     background-color: #F7F7F7;
 }
+#workout_wod,#score_notes{
+  width: 300px;
+  height: 80px;
+}
 
 /*ATHLETES PAGES*/
+#athletes{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .athlete_prof{
   display:flex;
   justify-content: space-around;
   flex-direction: row;
+  align-items: center;
   margin-top: 20px;
 }
-.athlete_prof img{
-  height: 300px;
+.athlete_circle{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #E6E9ED;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+.athlete_circle:hover{
+  opacity: .85;
+  transition: .5s;
+  border: 2px solid #C5C5C5;
+}
+.athlete_circle a{
+  color: #fff;
+}
+.athlete_img{
   width: 300px;
+  height: 300px;
+  border: 3px solid #E6E9ED;
   border-radius: 50%;
 }
 .athlete_attr{

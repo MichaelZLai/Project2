@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :scores
   has_one :athlete
 
+  # accepts_nested_attributes_for :athlete
+
 end

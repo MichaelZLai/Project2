@@ -1,4 +1,6 @@
 class AthletesController < ApplicationController
+
+
   def index
     @athletes = Athlete.all
   end
@@ -23,7 +25,7 @@ class AthletesController < ApplicationController
 
   def update
     @athlete = Athlete.find(params[:id])
-    @athlete.update(athlete_params)
+    @athlete.update!(athlete_params)
 
     redirect_to athlete_path(@athlete)
   end
@@ -37,7 +39,7 @@ class AthletesController < ApplicationController
 
   private
   def athlete_params
-    params.require(:athlete).permit(:age, :height, :weight, :img_url, :gender)
+    params.require(:athlete).permit(:age, :height, :weight, :img_url, :gender,:name, user_attributes:[:name, :email, :admin, :id])
   end
 
 end

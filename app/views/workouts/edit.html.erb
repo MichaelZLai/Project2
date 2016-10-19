@@ -4,19 +4,21 @@
 </div>
 
 <h3>Edit Workout</h3>
+<div id="form">
 <%= form_for @workout do |f| %>
 
-<p><%= f.label :workout_date %>
-<%= f.date_field :workout_date, value: f.object.workout_date %></p>
+<p><%= f.label :workout_date %></p>
+<p><%= f.date_field :workout_date, value: f.object.workout_date %></p>
 
-<p><%= f.label :workout_name %>
-<%= f.text_field :name %></p>
+<p><%= f.label :workout_name %></p>
+<p><%= f.text_field :name %></p>
 
-<p><%= f.label :workout %>
-<%= f.text_area :wod %></p>
+<p><%= f.label :workout %></p>
+<p><%= f.text_area :wod %></p>
 
-<%= f.submit "Edit WOD!" %>
+<p><%= f.submit "Edit WOD!" %></p>
 
 <% end %>
+</div>
 
 <%= link_to "Back", workout_path(@workout) %>

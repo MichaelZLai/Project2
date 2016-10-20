@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :scores
-  has_one :athlete
+  has_many :scores, dependent: :destroy
+
+  has_one :athlete, dependent: :destroy
 
   # accepts_nested_attributes_for :athlete
 

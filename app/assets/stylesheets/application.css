@@ -10,11 +10,20 @@ a, a:link, a:visited{
   text-decoration:none;
   color: #0B5FA7;
 }
-h3{
-  margin-top: 10px;
-}
 h2{
   margin-bottom: 5px;
+}
+h3{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+h4{
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.journal_entries{
+  border-top: 1px solid #E6E9ED;
 }
 /*TOP NAV BAR*/
 nav{
@@ -42,7 +51,7 @@ nav{
 
 /*LOGIN*/
 .login{
-  margin-right: 10px;
+  margin-right: 20px;
   display: flex;
   text-align:right;
   justify-content: flex-end;
@@ -77,6 +86,12 @@ footer,.push{
 footer{
   border-top: 2px solid #DBDBDB;
   padding-top: 10px;
+  background: #EBEBEB;
+  display:flex;
+  justify-content: flex-end;
+}
+footer div{
+  padding-right: 20px;
 }
 
 /*LEADERBOARD TABLE*/
@@ -90,6 +105,8 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 70%;
+    font-size: 12px;
+    margin-top: 20px;
 }
 td, th {
     border: 1px solid #dddddd;
@@ -105,9 +122,20 @@ td a:hover{
 tr:nth-child(even) {
     background-color: #F7F7F7;
 }
+.wut{
+  display:flex;
+  align-items: center;
+}
 #workout_wod,#score_notes{
   width: 300px;
   height: 80px;
+}
+
+/*EDIT LINKS*/
+#nav_links{
+  text-align:right;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
 /*ATHLETES PAGES*/
@@ -149,6 +177,13 @@ tr:nth-child(even) {
   height: 300px;
   border: 3px solid #E6E9ED;
   border-radius: 50%;
+}
+.small_athlete_img{
+  height:25px;
+  width:25px;
+  border-radius: 50%;
+  border: 1px solid #E6E9ED;
+  margin-right: 5px;
 }
 .athlete_attr{
   display: flex;

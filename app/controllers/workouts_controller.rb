@@ -30,8 +30,6 @@ before_action :authenticate_user!
 
   def show
     @workout = Workout.find(params[:id])
-
-
   end
 
   def destroy

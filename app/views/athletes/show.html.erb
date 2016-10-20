@@ -2,6 +2,14 @@
 <h2>Whats good, <%= current_user.name.partition(" ").first %></h2>
 <p>#Yolo</p>
 </div>
+
+<div id="nav_links">
+  <%= link_to "Back", athletes_path %>
+  <% if can? :update, @athlete %>
+    | <%= link_to "Edit Athlete", edit_athlete_path(@athlete) %>
+  <% end %>
+</div>
+
 <h3>Athlete: <%= @athlete.user.name %></h3>
 <div class="athlete_prof">
   <img class="athlete_img" src="<%= @athlete.img_url %>">
@@ -11,17 +19,11 @@
     <p>Height: <%= @athlete.height %></p>
     <p>Weight: <%= @athlete.weight %></p>
   </div>
-  <!-- <div class="athlete_maxes">
-    <ul>
-      <li></li>
-      <li></li>
-    </ul>
-  </div> -->
+  <div class="athlete_maxes">
+    <p>Clean and Jerk: <%= @athlete.clean_jerk %></p>
+    <p>Snatch: <%= @athlete.snatch %></p>
+    <p>Deadlift: <%= @athlete.deadlift %></p>
+    <p>Back Squat: <%= @athlete.back_squat %></p>
+    <p>Bench Press: <%= @athlete.bench %></p>
+  </div>
 </div>
-
-
-
-<%= link_to "Back", athletes_path %>
-<% if can? :update, @athlete %>
-  | <%= link_to "Edit Athlete", edit_athlete_path(@athlete) %>
-<% end %>

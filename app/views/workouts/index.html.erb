@@ -3,13 +3,21 @@
 <p>I've missed you.</p>
 </div>
 
-<h3>Latest Workouts</h3>
-<% @workouts.each do |workout| %>
-  <h3><a href="<%= workout_path(workout) %>"></h3>
-    <p><%= workout.name %> <%= workout.workout_date %></p>
-  </a>
-    <p><%= simple_format h workout.wod %></p>
-  <% end  %>
-<% if can? :create, @workout %>
+<div id="nav_links">
+  <% if can? :create, @workout %>
   <%= link_to "Add Workout", new_workout_path %>
-<% end %>
+  <% end %>
+</div>
+
+<h3>Latest Workouts</h3>
+<div class="workout_journal">
+  <% @workouts.each do |workout| %>
+    <div class="journal_entries"><h4>
+      <a href="<%= workout_path(workout) %>">
+        <%= workout.name %> -- <%= workout.workout_date %>
+      </a>
+    </h4>
+      <p><%= simple_format h workout.wod %></p>
+    </div>
+  <% end  %>
+</div>

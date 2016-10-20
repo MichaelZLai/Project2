@@ -3,8 +3,17 @@
 <p>Are. You. Ready.</p>
 </div>
 
+<div id="nav_links">
+<%= link_to "Back", workouts_path %>
+| <%= link_to "Add Score", new_workout_score_path(@workout) %>
+<% if can? :update, @workout %>
+  | <%= link_to "Edit Workout", edit_workout_path(@workout) %>
+  | <%= link_to "Delete Workout", workout_path(@workout), method: :delete, class: "delete" %>
+<% end %>
+</div>
+
 <div id="workout-body">
-  <h3><%= @workout.name %> <%= @workout.workout_date %></h3>
+  <h3><%= @workout.name %> -- <%= @workout.workout_date %></h3>
 
   <p><%= simple_format h @workout.wod %></p>
 
@@ -17,7 +26,7 @@
       </tr>
     <% @workout.scores.each do |score| %>
       <tr>
-        <td><%= score.user.name %></td>
+        <td class="wut"><a href="<%= athlete_path(score.user.athlete.id)%>"><img class="small_athlete_img" src="<%= score.user.athlete.img_url %>" alt="athlete icon"></a><%= score.user.name %></td>
         <td><%= score.workout_time %></td>
         <td>
           <% if can? :update, score %>
@@ -33,10 +42,3 @@
     <% end %>
   </table>
 </div>
-
-<%= link_to "Back", workouts_path %>
-| <%= link_to "Add Score", new_workout_score_path(@workout) %>
-<% if can? :update, @workout %>
-  | <%= link_to "Edit Workout", edit_workout_path(@workout) %>
-  | <%= link_to "Delete Workout", workout_path(@workout), method: :delete, class: "delete" %>
-<% end %>

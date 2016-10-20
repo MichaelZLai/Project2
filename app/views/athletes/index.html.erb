@@ -3,6 +3,10 @@
   <p>#Yolo</p>
 </div>
 
+<div id="nav_links">
+<%= link_to "Back", workouts_path %>
+</div>
+
 <h3>Athletes</h3>
 <div id="athletes">
 <% @athletes.each do |athlete| %>
@@ -13,5 +17,3 @@
 
   <% end %>
 </div>
-
-<%= link_to "Back", workouts_path %>

@@ -1,5 +1,5 @@
 class AthletesController < ApplicationController
-
+before_action :authenticate_user!
 
   def index
     @athletes = Athlete.all

@@ -26,7 +26,16 @@
       </tr>
     <% @workout.scores.each do |score| %>
       <tr>
-        <td class="wut"><a href="<%= athlete_path(score.user.athlete.id)%>"><img class="small_athlete_img" src="<%= score.user.athlete.img_url %>" alt="athlete icon"></a><%= score.user.name %></td>
+        <td class="wut">
+          <a href="<%= athlete_path(score.user.athlete.id)%>">
+            <% if score.user.athlete.img_url == nil %>
+            <img class="small_athlete_img" src="http://vignette3.wikia.nocookie.net/glee-new-beginnings/images/f/fd/Unknown.gif/revision/latest?cb=20130205144914" alt="athlete icon">
+            <% else %>
+            <img class="small_athlete_img" src="<%= score.user.athlete.img_url %>" alt="athlete icon">
+            <% end %>
+          </a>
+          <%= score.user.name %>
+        </td>
         <td><%= score.workout_time %></td>
         <td>
           <% if can? :update, score %>

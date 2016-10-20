@@ -14,7 +14,7 @@ before_action :authenticate_user!
   end
 
   def create
-    @athlete = Athlete.create!(athlete_params)
+    @athlete = Athlete.create!(athlete_params.merge(user: current_user))
 
     redirect_to workouts_path
   end
@@ -39,7 +39,7 @@ before_action :authenticate_user!
 
   private
   def athlete_params
-    params.require(:athlete).permit(:age, :height, :weight, :img_url, :gender,:name, user_attributes:[:name, :email, :admin, :id])
+    params.require(:athlete).permit(:age, :height, :weight, :img_url, :gender,:name,:user_id,:clean_jerk,:snatch,:deadlift,:back_squat,:bench, user_attributes:[:name, :email, :admin, :id])
   end
 
 end

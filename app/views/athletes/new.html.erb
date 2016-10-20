@@ -1,1 +1,48 @@
-Silly, You can't create an Athlete
+<div class="headbar">
+  <h2>What's good, <%= current_user.name.partition(" ").first %></h2>
+  <p>#Yolo</p>
+</div>
+
+<div id="nav_links">
+<%= link_to "Back", athletes_path %>
+</div>
+
+<h3>Create Your Athlete Profile</h3>
+
+<div id="form">
+  <%= form_for @athlete do |f| %>
+
+  <p><%= f.label :gender %></p>
+  <p><%= f.text_field :gender %></p>
+
+  <p><%= f.label :age %></p>
+  <p><%= f.text_field :age %></p>
+
+  <p><%= f.label :height %></p>
+  <p><%= f.text_field :height %></p>
+
+  <p><%= f.label :weight %></p>
+  <p><%= f.text_field :weight %></p>
+
+  <p><%= f.label :img_url %></p>
+  <p><%= f.text_field :img_url %></p>
+
+    <p><%= f.label :clean_and_jerk %></p>
+    <p><%= f.text_field :clean_jerk %></p>
+
+    <p><%= f.label :snatch %></p>
+    <p><%= f.text_field :snatch %></p>
+
+    <p><%= f.label :deadlift %></p>
+    <p><%= f.text_field :deadlift %></p>
+
+    <p><%= f.label :back_squat %></p>
+    <p><%= f.text_field :back_squat %></p>
+
+    <p><%= f.label :bench_press %></p>
+    <p><%= f.text_field :bench %></p>
+
+  <%= f.submit "Create Profile!" %>
+
+  <% end %>
+</div>

@@ -12,18 +12,26 @@
 
 <h3>Athlete: <%= @athlete.user.name %></h3>
 <div class="athlete_prof">
+  <% if @athlete.img_url == nil %>
+  <img class="athlete_img" src="http://vignette3.wikia.nocookie.net/glee-new-beginnings/images/f/fd/Unknown.gif/revision/latest?cb=20130205144914">
+  <% else %>
   <img class="athlete_img" src="<%= @athlete.img_url %>">
-  <div class="athlete_attr">
-    <p>Gender: <%= @athlete.gender %></p>
-    <p>Age: <%= @athlete.age %></p>
-    <p>Height: <%= @athlete.height %></p>
-    <p>Weight: <%= @athlete.weight %></p>
+  <% end %>
+  <div class="athlete_bio">
+    <h4>Bio</h4>
+    <p><span>Gender:</span> <%= @athlete.gender %></p>
+    <p><span>Age:</span> <%= @athlete.age %></p>
+    <p><span>Height:</span> <%= @athlete.height %></p>
+    <p><span>Weight:</span> <%= @athlete.weight %></p>
   </div>
   <div class="athlete_maxes">
-    <p>Clean and Jerk: <%= @athlete.clean_jerk %></p>
-    <p>Snatch: <%= @athlete.snatch %></p>
-    <p>Deadlift: <%= @athlete.deadlift %></p>
-    <p>Back Squat: <%= @athlete.back_squat %></p>
-    <p>Bench Press: <%= @athlete.bench %></p>
+    <h4>Maxes</h4>
+    <div class="maxes">
+      <p><span>Clean and Jerk:</span> <%= @athlete.clean_jerk %></p>
+      <p><span>Snatch:</span> <%= @athlete.snatch %></p>
+      <p><span>Deadlift:</span> <%= @athlete.deadlift %></p>
+      <p><span>Back Squat:</span> <%= @athlete.back_squat %></p>
+      <p><span>Bench Press:</span> <%= @athlete.bench %></p>
+    </div>
   </div>
 </div>

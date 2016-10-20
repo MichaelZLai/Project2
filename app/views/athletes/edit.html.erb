@@ -14,7 +14,7 @@
 
 <div id="form">
   <%= form_for @athlete do |f| %>
-  <div class="form_pt1">
+
   <p><%= f.label :name %></p>
   <%= f.fields_for :user, @athlete.user do |c| %>
   <p><%= c.text_field :name %></p>
@@ -44,9 +44,10 @@
 
   <p><%= f.label :weight %></p>
   <p><%= f.text_field :weight %></p>
-  </div>
 
-  <div class="form_pt2">
+  <p><%= f.label :img_url %></p>
+  <p><%= f.text_field :img_url %></p>
+
     <p><%= f.label :clean_and_jerk %></p>
     <p><%= f.text_field :clean_jerk %></p>
 
@@ -61,10 +62,7 @@
 
     <p><%= f.label :bench_press %></p>
     <p><%= f.text_field :bench %></p>
-  </div>
-
 
   <%= f.submit "Edit Athlete!" %>
-
   <% end %>
 </div>

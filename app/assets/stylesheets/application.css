@@ -95,6 +95,7 @@ footer div{
 }
 
 /*LEADERBOARD TABLE*/
+
 #form p{
   margin-top: 10px;
 }
@@ -185,7 +186,7 @@ tr:nth-child(even) {
   border: 1px solid #E6E9ED;
   margin-right: 5px;
 }
-.athlete_attr{
+.athlete_bio,.athlete_maxes{
   display: flex;
   flex-direction: column;
 }

@@ -1,5 +1,5 @@
 class WorkoutsController < ApplicationController
-before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @workouts = Workout.all
@@ -11,8 +11,8 @@ before_action :authenticate_user!
   end
 
   def create
+    # NHO: probably want to lock down this action
     @workout = Workout.create!(workout_params)
-
     redirect_to workouts_path
   end
 
@@ -22,6 +22,7 @@ before_action :authenticate_user!
   end
 
   def update
+    # NHO: probably want to lock down this action
     @workout = Workout.find(params[:id])
     @workout.update(workout_params)
 
@@ -33,6 +34,7 @@ before_action :authenticate_user!
   end
 
   def destroy
+    # NHO: probably want to lock down this action
     @workout = Workout.find(params[:id])
     @workout.destroy
 

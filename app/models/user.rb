@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_one :athlete, dependent: :destroy
 
+  # NHO: reminder to remove unused / commented out code
   # accepts_nested_attributes_for :athlete
 
 end

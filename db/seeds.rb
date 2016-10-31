@@ -10,8 +10,11 @@ Workout.destroy_all
 Score.destroy_all
 User.destroy_all
 Athlete.destroy_all
+
+# NHO: I think you need to actually pass the tablename to this method to clear the ids..
 ActiveRecord::Base.connection.reset_pk_sequence!('TABLENAME')
 
+#  NHO: great seeds!
 fran = Workout.create(name:"Fran", wod:"Three rounds, 21-15- and 9 reps, for time of:\r\nThruster (95/65lbs)\r\nPull-ups", workout_date: "2016-10-10")
 monday = Workout.create(name:"Monday", wod:"10 rounds for time of:\r\n95-lb. sumo deadlift high pulls, 7 reps\r\n95-lb. front squats, 7 reps\r\n95-lb. push jerks, 7 reps", workout_date: "2016-10-17")
 tuesday = Workout.create(name:"Tuesday", wod:"Complete as many rounds and reps as possible in 10 minutes of:\r\n30 double-unders\r\n75-lb. power snatches, 15 reps", workout_date: "2016-10-18")

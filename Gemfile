@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# NHO: since you are using a few custom gems, I recommend in general coming up with some system of organizing your gems.
+# Personally, I like to group them by rails default, and custom added, then sort them alphabetically...
 gem 'rails-erd'
 gem 'cancancan', '~> 1.10'
 gem 'devise'

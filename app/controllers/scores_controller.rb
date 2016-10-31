@@ -1,6 +1,8 @@
 class ScoresController < ApplicationController
-before_action :authenticate_user!
-
+  before_action :authenticate_user!
+  # NHO: can you see a line this is repetitive in this controller?
+  # We can help DRY up this controller by using before_action methods to do common tasks such as
+  # find a workout
   def new
     @workout = Workout.find(params[:workout_id])
     @score = Score.new
@@ -9,7 +11,7 @@ before_action :authenticate_user!
   def create
     @workout = Workout.find(params[:workout_id])
     @score = @workout.scores.create!(score_params.merge(user: current_user))
-    @workout_time = []
+    @workout_time = [] # NHO: is this line being used anywhere?
 
     redirect_to workout_path(@workout)
   end
@@ -24,7 +26,7 @@ before_action :authenticate_user!
     @workout = Workout.find(params[:workout_id])
     @score = Score.find(params[:id])
     @score.update(score_params)
-    authorize! :update, @score
+    authorize! :update, @score # NHO: probably want this line before the update happens...
 
     redirect_to workout_path(@workout)
   end
@@ -32,6 +34,7 @@ before_action :authenticate_user!
   def destroy
     @workout = Workout.find(params[:workout_id])
     @score = @workout.scores.find(params[:id])
+      # NHO: great opportunity to take advantage of cancancan's authorize! method
       if @score.user == current_user
         @score.destroy
       else

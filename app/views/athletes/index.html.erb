@@ -4,7 +4,9 @@
 </div>
 
 <div id="nav_links">
-<%= link_to "Back", workouts_path %> 
+<%= link_to "Back", workouts_path %>
+<!-- NHO: could put some logic here to hide this link...  -->
+<!-- <% if !current_user.athlete  -->
 | <%= link_to "Create Your Athlete Profile!", new_athlete_path %>
 </div>
 

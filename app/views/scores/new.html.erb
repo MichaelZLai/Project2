@@ -1,25 +1,25 @@
 <div class="headbar">
-<h2><%= current_user.name.partition(" ").first %>, what's your Score?</h2>
-<p>Either way, I'm proud of you.</p>
+    <h2><%= current_user.name.partition(" ").first %>, what's your Score?</h2>
+    <p>Either way, I'm proud of you.</p>
 </div>
 
 <div id="nav_links">
-<p><%= link_to "Back", workout_path(@workout) %></p>
+    <p><%= link_to "Back", workout_path(@workout) %></p>
 </div>
 
 <h3>Add Score</h3>
 <div id="form">
-<%= form_for [@workout, @score] do |f| %>
+    <%= form_for [@workout, @score] do |f| %>
 
-<p><%= f.label :class_time %></p>
-<p><%= f.text_field :workout_time %></p>
+    <p><%= f.label :class_time %></p>
+    <p><%= f.text_field :workout_time %></p>
 
-<p><%= f.label :score %></p>
-<p><%= f.text_field :workout_score %></p>
+    <p><%= f.label :score %></p>
+    <p><%= f.text_field :workout_score %></p>
 
-<p><%= f.label :notes %></p>
-<p><%= f.text_area :notes %></p>
+    <p><%= f.label :notes %></p>
+    <p><%= f.text_area :notes %></p>
 
-<p><%= f.submit "Submit Your Score!" %></p>
-<% end %>
+    <p><%= f.submit "Submit Your Score!" %></p>
+    <% end %>
 </div>

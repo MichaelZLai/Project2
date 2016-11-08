@@ -2,7 +2,7 @@ class WorkoutsController < ApplicationController
 before_action :authenticate_user!
 
   def index
-    @workouts = Workout.all
+    @workouts = Workout.all.order('workout_date DESC')
   end
 
   def new

@@ -9,15 +9,15 @@
 </div>
 
 <h3>Athletes</h3>
-<div id="athletes">
-  <% @athletes.each do |athlete| %>
-    <% if athlete.img_url == nil %>
-      <div class="athlete_circle" style="background-image:url('http://vignette3.wikia.nocookie.net/glee-new-beginnings/images/f/fd/Unknown.gif/revision/latest?cb=20130205144914')">
-    <% else %>
-      <div class="athlete_circle" style="background-image:url('<%=athlete.img_url%>')">
-    <% end %>
-  <a href="<%= athlete_path(athlete) %>"><%= athlete.user.name %></a>
-</div>
+  <div id="athletes">
+    <% @athletes.each do |athlete| %>
+      <% if athlete.img_url == nil %>
+        <div class="athlete_circle" style="background-image:url('http://vignette3.wikia.nocookie.net/glee-new-beginnings/images/f/fd/Unknown.gif/revision/latest?cb=20130205144914')">
+      <% else %>
+        <div class="athlete_circle" style="background-image:url('<%=athlete.img_url%>')">
+      <% end %>
+    <a href="<%= athlete_path(athlete) %>"><%= athlete.user.name %></a>
+  </div>
 
   <% end %>
 </div>

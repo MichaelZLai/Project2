@@ -12,7 +12,7 @@
 <%= form_for [@workout, @score] do |f| %>
 
 <p><%= f.label :class_time %></p>
-<p><%= f.text_field :workout_time %></p>
+<p><%= f.select :class_time, ["","6am", "7am", "8am", "Noon", "5:30pm", "6:30pm", "7:30pm"]%></p>
 
 <p><%= f.label :score %></p>
 <p><%= f.text_field :workout_score %></p>

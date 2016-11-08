@@ -190,3 +190,24 @@ tr:nth-child(even) {
   display: flex;
   flex-direction: column;
 }
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2)
+{
+.athlete_circle{
+  display:flex;
+  justify-content: center;
+  /*align-items: center;*/
+  border: 2px solid #E6E9ED;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+}

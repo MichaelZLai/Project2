@@ -13,7 +13,7 @@
   <%= form_for @athlete do |f| %>
 
   <p><%= f.label :gender %></p>
-  <p><%= f.text_field :gender %></p>
+  <p><%= f.select :gender, ["", "Male", "Female"]%></p>
 
   <p><%= f.label :age %></p>
   <p><%= f.text_field :age %></p>

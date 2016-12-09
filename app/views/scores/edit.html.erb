@@ -5,6 +5,9 @@
 
 <div id="nav_links">
 <%= link_to "Back", workout_path(@workout) %>
+<% if can? :update, @score %>
+  | <%= link_to "Delete Score", workout_path(@workout), method: :delete, class: "delete" %>
+<% end %>
 </div>
 
 <h3>Edit Score</h3>

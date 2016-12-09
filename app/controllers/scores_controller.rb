@@ -3,7 +3,7 @@ before_action :authenticate_user!
 
   def new
     @workout = Workout.find(params[:workout_id])
-    @score = Score.new
+    @score = Score.new(:order => 'created_at DESC')
   end
 
   def create

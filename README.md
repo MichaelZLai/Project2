@@ -37,6 +37,5 @@ rails s
 
 ## Technologies
 ![postgresql](./images/PostgreSQL.png)
-* PostgreSQL
+
 ![rails](./images/rails.png)
-* Ruby On Rails
